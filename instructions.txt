@@ -1,0 +1,14 @@
+Install Python:
+    brew install python
+    python3 --version
+    pip3 --version
+    pip3 install selenium
+    pip3 show selenium
+    cd /Users/apple/Library/Python/3.9/lib/python/site-packages
+
+Extensions on VS Code:
+    Python - Microsoft
+    Robot Framework server language
+
+Install pycharm - Set python interpreter to your local python path
+
