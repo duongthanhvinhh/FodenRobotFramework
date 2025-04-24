@@ -1,7 +1,13 @@
 name = "Foden"
+full_name = "Foden Duong"
+print(name in full_name) #substring check -> return true or false
 age = 26
 #print(name + age) TypeError: can only concatenate str (not "int") to str
 print("{} {}".format(name, age))
+name_with_spaces = " Foden   "
+print(name_with_spaces.strip()) #Return a copy of the string with leading and trailing whitespace removed.
+print(name_with_spaces.lstrip()) #Remove spaces in left
+print(name_with_spaces.rstrip()) #Remove spaces in right
 
 # List - Example code
 values = [1, 2, "Foden", 78]
@@ -134,7 +140,7 @@ print(calculator_with_arg.get_info_user()) #Output: Foden : 26 years old.
 
 
 # Example full OOP Python
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod #abc here is the name of python file -> abc.py
 class Animal(ABC): # Abstraction + Inheritance base
     def __init__(self, unique_name):# Encapsulation
         self._name = unique_name # Encapsulation because the _name is intended to be private in Python
@@ -153,3 +159,47 @@ dog = Dog("Buddy")
 cat = Cat("Moon")
 print(dog.speak()) #Output: Buddy says Woof!
 print(cat.speak()) #Output: Moon says Meow!
+
+
+#Must call parent constructor explicitly if the parent's constructor is not a default constructor
+class Parent:
+    def __init__(self, name_parent):
+        print(f"Parent constructor called. Name: {name_parent}")
+
+class Child(Parent):
+    def __init__(self, name_child, age_child):
+        # ✅ Must call parent constructor
+        super().__init__(name_child)
+        print(f"Child constructor called. Age: {age_child}")
+
+child = Child("Alice", 25)
+
+
+#In case the parent class constructor takes more arguments than the child
+class Parent1:
+    def __init__(self, name_parent1, age_parent1, country):
+        print(f"Parent: name={name_parent1}, age={age_parent1}, country={country}")
+        self.name_parent1 = name_parent1
+        self.age_parent1 = age_parent1
+        self.country = country
+
+class Child1(Parent1):
+    def __init__(self, name_child1, age_child1):
+        # ✅ You must call the parent constructor with all required arguments
+        # You can hardcode or compute the remaining one(s)
+        super().__init__(name, age, country="USA")
+        print(f"Child: name={name_child1}, age={age_child1}")
+
+child1 = Child1("Alice", 30)
+
+#Or can use **kwargs
+    # class Parent:
+    #     def __init__(self, name, age, country):
+    #         print(f"Parent: name={name}, age={age}, country={country}")
+    #
+    # class Child(Parent):
+    #     def __init__(self, name, age, **kwargs):
+    #         super().__init__(name, age, **kwargs)
+    #
+    # child = Child("Bob", 25, country="Canada")
+
