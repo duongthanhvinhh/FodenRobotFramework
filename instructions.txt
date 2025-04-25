@@ -12,3 +12,38 @@ Extensions on VS Code:
 
 Install pycharm - Set python interpreter to your local python path
 
+Install pytest
+
+Run pytest from cli:
+    py.test ./pytest_and_selenium_basic/test_demo.py => run only specific file
+    py.test -k price => run only the test method which contains the word `price` in it's name
+    py.test -v => Verbose: show full test names and status
+    py.test -v -s => show full test names, and also show the output of print statement inside the tests
+
+    @pytest.mark.smoke => Add this one to group the methods to smoke group (smoke can be replaced by any other name)
+    def test_final_price():
+        print(7)
+       => To run: py.test -v -s -m smoke
+    There are some pre-defined group like:
+        @pytest.mark.skip => The test is marked with this one will be skipped
+        @pytest.mark.xfail => The test is marked with this one will be xfailed when failed, and xpassed when passed. Use this one when you don't want to see the failed one in red in the report
+
+
+    @pytest.fixture()
+    def setup_and_teardown():
+        print("Hello guys, welcome to pytest!") => work as beforeMethod() in testNG
+        yield
+        print("Goodbye, see you later") => work as afterMethod() in testNG
+    => But we have to pass the fixture name to the test method we want to run with fixture, like below
+    def test_print_full_name(setup_and_teardown):
+        print("Duong Thanh Vinh")
+
+    conftest file to generalize fixture and make it available to all test cases
+
+    # With pytest, any test file should start with `test_` or end with `_test`
+    # With pytest, the class name should start with Test, like TestDemo
+    # With pytest, any method should start with `test`
+
+
+    # HTML report with pytest: pip3 install pytest-html
+    # Run test with: pytest --html=report.html
