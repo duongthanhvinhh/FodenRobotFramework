@@ -47,3 +47,6 @@ Run pytest from cli:
 
     # HTML report with pytest: pip3 install pytest-html
     # Run test with: pytest --html=report.html
+
+    # Drive the environment variable at run time
+    pytest --browser_name firefox
