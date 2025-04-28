@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
-from page_objects.base_page import BasePage
-from page_objects.cart_page import CartPage
+from pages.base_page import BasePage
+from pages.cart_page import CartPage
 
 
 class ShopPage(BasePage):

@@ -7,7 +7,7 @@ if  total_items_in_cart != 2:
 
 # try catch
 try:
-    with open('./data/text.txt') as reader:
+    with open('data/text.txt') as reader:
         reader.read()
 except Exception as e:
     print(e)

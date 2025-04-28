@@ -50,3 +50,13 @@ Run pytest from cli:
 
     # Drive the environment variable at run time
     pytest --browser_name firefox
+
+    @pytest.mark.smoke # This is like category in selenium Java and C# => To run by filtering category: pytest -m smoke
+
+    # File pytest.ini => Use to avoid warning message when using a custom mark, like smoke
+
+TODO:
+    # Run parallel
+    # API testing integration
+    # Allure report
+    # CI/CD

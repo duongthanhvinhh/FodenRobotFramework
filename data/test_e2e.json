@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "user_name" : "rahulshettyacademy",
+      "password" : "l1earning",
+      "product_name" : "Blackberry",
+      "target_country" : "India"
+    },
+    {
+      "user_name" : "rahulshettyacademy",
+      "password" : "learning",
+      "product_name" : "Samsung Note 8",
+      "target_country" : "India"
+    }
+  ]
+}

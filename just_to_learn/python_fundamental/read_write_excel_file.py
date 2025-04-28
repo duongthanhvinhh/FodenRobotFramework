@@ -1,6 +1,6 @@
 import openpyxl
 
-book = openpyxl.load_workbook("./data/excel_file.xlsx")
+book = openpyxl.load_workbook("data/excel_file.xlsx")
 sheet = book.active # Refer to the current active sheet
 
 # To switch to another sheet, use two ways below

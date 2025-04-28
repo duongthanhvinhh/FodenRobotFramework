@@ -7,7 +7,7 @@ from selenium.webdriver.ie.service import Service
 # To control the option you send along with the command to execute test in terminal
 def pytest_addoption(parser):
     parser.addoption(
-        "--browser_name", action="store", default="chrome", help="browser selection"
+        "--browser_name", action="store", default="firefox", help="browser selection"
     )
 
 @pytest.fixture(scope="function")
@@ -44,5 +44,4 @@ def handle_browser(request):
     driver.get("https://rahulshettyacademy.com/loginpagePractise/")
     # driver.get("https://rahulshettyacademy.com/angularpractice/")
     yield driver #To send driver back to class test which call this fixture
-    print("Add some actions needed to run after method")
     driver.close()

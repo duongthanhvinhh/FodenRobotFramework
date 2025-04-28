@@ -1,4 +1,4 @@
-file = open('./data/text.txt')
+file = open('data/text.txt')
 
 # Read the first 5 characters in the text file
 # print(file.read(5))
