@@ -1,11 +1,13 @@
 from selenium.webdriver.common.by import By
 
+from page_objects.base_page import BasePage
 from page_objects.cart_page import CartPage
 
 
-class ShopPage:
+class ShopPage(BasePage):
 
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
         self.shop_page = (By.CSS_SELECTOR, "a[href*='shop']")
         self.products_list = (By.XPATH, "//div[@class='card h-100']")
@@ -20,7 +22,7 @@ class ShopPage:
         products = self.driver.find_elements(*self.products_list)
         for product in products:
             product_name = product.find_element(*self.product_name).text
-            if product_name == product_name:
+            if product_name == self.product_name:
                 # Add item into cart
                 product.find_element(*self.add_item_button).click()
 
