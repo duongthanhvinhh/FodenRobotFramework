@@ -55,6 +55,8 @@ Run pytest from cli:
 
     # File pytest.ini => Use to avoid warning message when using a custom mark, like smoke
 
+    # To run test parallel: pip3 install pytest-xdist
+
 TODO:
     # Run parallel
     # API testing integration
